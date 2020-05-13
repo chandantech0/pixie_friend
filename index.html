@@ -9,81 +9,151 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
   <link rel="stylesheet" href="./css/styles.css" />
   <title>Pixie Friends</title>
 </head>
 
 <body>
   <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="images/Logo@2x.png" alt="logo" class="img-fluid size-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Explore Sprizzletania</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Our Story</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">For Adults</a>
-        </li>
-      </ul>
-      <div class="my-2 my-lg-0">
-        Profile
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Explore Sprizzletania</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">For Adults</a>
+          </li>
+        </ul>
+        <div class="my-2 my-lg-0">
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img src="images/Profile.svg" alt="logo" class="img-fluid pr-2"> My Pixie Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
   <!-- *navbar -->
-
+  <button class="btn btn-default m-2 navigate-sidebar" type="button" onclick="toggleSidebar()">
+  <span><h6 class="mb-0">Navigate to sidebar</h6></span>
+</button>
   <!-- Sidebar -->
   <div id="wrapper">
-  <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper">
       <aside id="sidebar">
-          <ul id="sidemenu" class="sidebar-nav">
-              <li>
-                  <a href="#">
-                      <!-- <span class="sidebar-icon"><i class="fa fa-database"></i></span> -->
-                      <span class="sidebar-title">icon</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <span class="sidebar-title">icon</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <span class="sidebar-title">icon</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <span class="sidebar-title">icon</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <span class="sidebar-title">icon</span>
-                  </a>
-              </li>
-          </ul>
-      </aside>            
-  </div>
+        <ul id="sidemenu" class="sidebar-nav">
+          <li>
+            <a href="#">
+
+              <img src="images/Magicaltree.svg" alt="Magic Tree" class="img-fluid">
+              <div class="sidebar-title">Magic Tree</div>
+
+            </a>
+          </li>
+          <li>
+            <a href="#">
+
+              <img src="images/House.svg" alt="House" class="img-fluid">
+              <div class="sidebar-title">House</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/Mountain.svg" alt="Mountain" class="img-fluid">
+              <div class="sidebar-title">Mountain</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/Shop.svg" alt="Shop" class="img-fluid">
+              <div class="sidebar-title">Shop</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/Library.svg" alt="Library" class="img-fluid">
+              <div class="sidebar-title">Library</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/Playground.svg" alt="Playground" class="img-fluid">
+              <div class="sidebar-title">Playground</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ToadstoolVillage.svg" alt="Toadstool Village" class="img-fluid">
+              <div class="sidebar-title">Toadstool Village</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/ArtGallery.svg" alt="Art Gallery" class="img-fluid">
+              <div class="sidebar-title">Art Gallery</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/FairyFlossForest.png" alt="Fairy Floss Forge" class="img-fluid">
+              <div class="sidebar-title">Fairy Floss Forget</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/Hospital.svg" alt="Hospital" class="img-fluid">
+              <div class="sidebar-title">Hospital</div>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
   </div>
   <!-- *Sidebar -->
-
   <main id="page-content-wrapper" role="main">
-    </main>
-
+    <div class="container-fluid p-0">
+          <section class="banner">
+            <div class="banner-text">
+              <h3 class="font-weight-light mb-0">Welcome</h3>
+              <h1>Pixie Friends</h1>
+            </div>
+            <img src="images/banner.svg" alt="pixie friends" class="img-fluid" width="100%">
+          </section>
+        <div class="p-3">
+          <h5 class="font-weight-light text-center mb-0">Sprizzletania</h5>
+        </div>
+         
+            <div id="map"></div>
+        
+    </div>
+  </main>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -94,6 +164,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
